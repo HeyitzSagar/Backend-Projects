@@ -197,6 +197,34 @@ db.students.DeleteMany({});  // will delete all records of the dbs -->
     db.dropDatabase();
 
     db.products.drop()  // specifically dropping only a single collections 
-    
+
 
  -->
+
+
+ <!-- Difference between insertone and insertMany
+ 
+    InsertOne(data, options)
+    InsertMany(data, options)
+ 
+    We will discuss the options here, the first options which is ordered options 
+    
+    ODERED OPTIONS IN INSERT COMMAND IN MONGODB
+
+    db.books.insertMany([{_id:'C', name:'C', price: 3}, {_id:'E', name:'D', price: 4}], {ordered:false})
+
+    // Basically insertMany runs in a sync manner and doesnt execute futher once it triggers or throws error, but the extra options parameters which is ordered: false make it possible to execute
+
+
+  -->
+
+
+
+  <!-- Schema validations in MongoDB
+  
+    
+  
+  
+  
+  
+   -->
