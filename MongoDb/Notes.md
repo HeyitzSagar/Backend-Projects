@@ -146,7 +146,57 @@ db.students.DeleteMany({});  // will delete all records of the dbs -->
 
 <!-- Nested Documents and Max size of a documents
 
-    
+    Level of nesting is possible and the size limit is 16 mb
 
+
+ -->
+
+<!-- Projections in MongoDB
+    Select Column Query in MongoDB
+     db.students.find({},{name:1, _id: 0})
+[
+  { name: 'John Doe' },
+  { name: 'Jane Smith' },
+  { name: 'Robert Brown' },
+  { name: 'Emily Davis' },
+  { name: 'Michael Johnson' },
+  { name: 'Sarah Wilson' },
+  { name: 'David Lee' },
+  { name: 'Laura Martinez' },
+  { name: 'James Anderson' },
+  { name: 'Sophia Hernandez' }
+]
+     -->
+
+
+<!-- IS mongodb really Schemaless ?
+
+    Actually mongodb is schemaless, but on the application level we define the schema of the models, if we do not do so, it will become more complicated to manipulate the data.
+ -->
+
+
+ <!-- Datatypes in MongoDb
+      
+      Text,
+      Boolean,
+      Number ------
+                   Integeer
+                   NumberLong
+                   NumberDecimal
+      ObjectID,
+      ISODATE,
+      Timestamp,
+      Emd.Document
+ 
+ 
+  -->
+
+<!-- Delete Database In MongoDB
+
+    Dropping of the Database
+    db.dropDatabase();
+
+    db.products.drop()  // specifically dropping only a single collections 
+    
 
  -->
