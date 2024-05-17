@@ -33,29 +33,31 @@ const getTask = async (req, res) => {
   }
 };
 
-// update a task by using an id 
-const updateTask = async(req, res) => {
+// update a task by using an id
+const updateTask = async (req, res) => {
   try {
-    const updateTask = await Task.findByIdAndUpdate(req.params.id, req.body, {new:true})
+    const updateTask = await Task.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     if (!updateTask) {
-      return res.status(404).json({msg: `Task not found !!`})
+      return res.status(404).json({ msg: `Task not found !!` });
     }
     res.status(200).json(updateTask);
   } catch (error) {
-    res.status(500).json({msg : error.message});
+    res.status(500).json({ msg: error.message });
   }
 };
 
-//  delete a task based on id 
-const deleteTask = async(req, res) => {
+//  delete a task based on id
+const deleteTask = async (req, res) => {
   try {
     const deletedTask = await Task.findByIdAndDelete(req.params.id);
     if (!deletedTask) {
-      return res.status(404).json({msg: `Task not found`});
+      return res.status(404).json({ msg: `Task not found` });
     }
-    res.status(200).json({msg: `Task deleted`, deletedTask})
+    res.status(200).json({ msg: `Task deleted`, deletedTask });
   } catch (error) {
-    res.status(500).json({msg: error.message});
+    res.status(500).json({ msg: error.message });
   }
 };
 

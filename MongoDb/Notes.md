@@ -2,19 +2,52 @@
 MySql vs MongoDb
 
 
-MongoDb is basically a database Server
+MongoDb is basically a database Server.
+MongoDb is highly scalabe as compared to SQL.
 
 Basically MysQl  works on the Schema and table structure format whereas MongoDb has no Schema.
 
 MySQl ->   Database -> Table ->  Rows
 
-MongoDB -> Database -> Collections -> Documents
+MongoDB -> Database(Documents) -> Collections -> Documents
+
+Documents: - A collection of key value pair.
+<!-- {
+    "name" : "Amit",
+    "age" : 27,
+    "city" : "Noida",
+    "identity" : {
+        "adhaar" : 54678987654,
+        "pan" : "TUFEU5905D"
+    }
+} -->
+
+{
+    "name" : "Amit",
+    "age" : 27,
+    "city" : "Noida",
+    "identity" : {
+        "adhaar" : 54678987654,
+        "pan" : "TUFEU5905D"
+    },
+    "previous" : [
+        "amazon", 
+        "google"
+    ]
+}
+
+MongoDb has less relations and data is stored together, mongodb is highly flexible.
+
 
 
 <!--  What is BSON ? -->
 
 Binary JSon, is a binary structure encodes type and length information, which allows it to be traversed much more quickly compared to JSON.
 
+eg: {
+        "name" : "Sagar",
+    }
+// it converts the code in the binary so that travsal gets fast.
 <!-- How to create DB in mongoose ? -->
 
 //  use latest_db  (if db is exists so it will use that one else it will create that DB)
@@ -25,10 +58,18 @@ db.students// if it exists it will use that one else it will create that one
 
 <!-- How to create a Collections in DB ?  -->
 db.students.insertOne({name : "Ram", age: 12}) 
+<!-- 
 
+ -->
 <!-- Find all the documents inside the collections  ?  -->
 db.students.find()
 
+<!-- 
+    [
+  { _id: ObjectId('6646cf7a827cfcee1c46b799'), name: 'Ram', age: 12 },
+  { _id: ObjectId('6646cfaa827cfcee1c46b79a'), name: 'Shyam', age: 21 }
+]
+ -->
 id is basically a unique identifier in each of the document.
 
 <!-- Embedded documents in MongoDB -->
@@ -41,5 +82,71 @@ Above query is to convert nested object into a single object key value pairs
 16 level of document nesting is possible in mongodb and the maximum size can be 16 mb.
 
 
+// CRUD OPERATIONS 
+<!-- Create, Read, Update, Delete     -->
 
 
+<!-- Read Operations -->
+    Read Operations 
+<!--  Find vs FindOne   -->
+
+<!-- 
+Find always returns the cursor whereas findone always returns the null value 
+-->
+
+<!-- Find the students whose age is less than 21 -->
+
+<!-- 
+    db.students.find({age: {$lt:12}})
+
+    $lt is basically a reserved keyword in mongodb which means less than 
+    $gte greater than
+    
+ -->
+
+<!-- Find the students whose age is greater than  12 years and less than 34 year
+
+    db.students.find({age : {$gte : 12, $lt: 34}})
+ -->
+
+
+
+<!-- Methods of Create -->
+
+Create Operations 
+
+<!-- Insert vs InsertOne vs InsertMany -->
+
+<!-- Insert has now become deprecated -->
+
+<!-- InsertOne to insert a single documentsX -->
+<!-- InsertMany to insert multiple documents -->
+
+
+
+<!-- Update in MongoDB -->
+
+UpdateOne vs UpdateMany
+
+<!-- db.students.updateOne({name: "Sagar"},{$set:{age: 15}}) -->
+
+<!-- db.students.updateMany({age:{$gte:14}}, {$set:{Iseligible:true}}) -->
+
+
+<!-- Delete in MongoDb -->
+
+<!-- DeleteOne vs DeleteMany in  MongoDB
+
+db.students.DeleteMany({age:13});
+db.students.DeleteMany({name: "Sumit"});
+db.students.DeleteMany({});  // will delete all records of the dbs -->
+
+
+<!-- Embedded documents in MongoDBs -->
+
+<!-- Nested Documents and Max size of a documents
+
+    
+
+
+ -->

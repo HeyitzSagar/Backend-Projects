@@ -25,3 +25,5 @@ app.post('/upload', upload.single('file'), fileUploadController);
 app.get('/', (req, res) => res.send('Welcome to fileupload api'));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
+
+
