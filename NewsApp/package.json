@@ -1,0 +1,15 @@
+{
+  "name": "newsapp",
+  "version": "1.0.0",
+  "description": "A robust newsapp restfull api",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Sagar Gupta",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.1"
+  }
+}
